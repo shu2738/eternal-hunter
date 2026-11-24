@@ -6,7 +6,7 @@
 <title>ETERNAL · HUNTER</title>
 <meta name="description" content="ETERNAL · HUNTER 세계 기록 — 헌터협회와 4대 길드">
 <meta property="og:title" content="ETERNAL · HUNTER">
-<meta property="og:image" content="img/h14.webp">
+<meta property="og:image" content="img/h14.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
 <style>
@@ -120,7 +120,7 @@ footer{border-top:1px solid var(--line);text-align:center;color:var(--mute);font
 
 <main id="top">
 <section class="hero">
-  <img src="img/h14.webp" alt="SSS급 헌터 백연우">
+  <img src="img/h14.png" alt="SSS급 헌터 백연우">
   <div class="t">
     <h1>Eternal <i>·</i><br>Hunter</h1>
     <p>게이트가 열린 지 십 년. 도시는 평소처럼 굴러가고, 헌터들은 오늘도 등급과 목숨을 걸고 문을 닫는다.</p>
@@ -200,7 +200,7 @@ const C=[
 {id:"h11",g:"cri",n:"박하준",s:"남",a:24,role:"적월 길드원",rk:"A-",mb:"ESFP",ab:"폭발",abd:"손끝에서 폭발을 일으킴",tags:["분위기메이커","허당"],d:"사고를 치고 머쓱하게 웃는 게 일상. 결정적일 땐 믿을 만하다."},
 {id:"h16",g:"cri",n:"배나연",s:"여",a:22,role:"적월 길드원",rk:"B+",mb:"ISFP",ab:"바람",abd:"바람을 일으켜 몸을 띄움",tags:["느긋한","자유로운"],d:"기지개부터 켜고 일을 시작한다. 이상하게 늘 제시간에 끝낸다."}];
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const card=(c,lead)=>`<button type="button" class="card${lead?' lead':''}" data-id="${c.id}"><div class="ph"><img loading="lazy" src="img/${c.id}.webp" alt="${esc(c.n)}"></div><div class="bd">${lead?'<div class="tagline">GUILD MASTER</div>':''}<div class="nm">${esc(c.n)}</div><div class="rk">${esc(c.rk)}</div><div class="sub">${esc(c.role)} · ${esc(c.s)} ${c.a}세</div><div class="sub">${esc(c.mb)}</div><div class="ab"><b>${esc(c.ab)}</b> — ${esc(c.abd)}</div></div></button>`;
+const card=(c,lead)=>`<button type="button" class="card${lead?' lead':''}" data-id="${c.id}"><div class="ph"><img loading="lazy" src="img/${c.id}.png" alt="${esc(c.n)}"></div><div class="bd">${lead?'<div class="tagline">GUILD MASTER</div>':''}<div class="nm">${esc(c.n)}</div><div class="rk">${esc(c.rk)}</div><div class="sub">${esc(c.role)} · ${esc(c.s)} ${c.a}세</div><div class="sub">${esc(c.mb)}</div><div class="ab"><b>${esc(c.ab)}</b> — ${esc(c.abd)}</div></div></button>`;
 document.getElementById('g-assoc').innerHTML=C.filter(c=>c.g==='as').map(c=>card(c)).join('');
 const tabs=document.getElementById('tabs'),panel=document.getElementById('panel');
 tabs.innerHTML=G.map((g,i)=>`<button type="button" role="tab" id="t-${g.k}" aria-selected="${i===0}" data-k="${g.k}" style="--c:${g.c}"><i class="sw"></i><span><b>${esc(g.ko)}</b><span>${esc(g.en)}</span></span></button>`).join('');
@@ -214,7 +214,7 @@ const A=["<b>경보</b> 강남역 B급 게이트 개방 — 흑요 길드 출동
 const run=document.getElementById('run');run.innerHTML=[...A,...A].map(t=>`<span>${t}</span>`).join('');
 const dlg=document.getElementById('dlg'),box=document.getElementById('d-box');let last=null;
 const open=id=>{const c=C.find(x=>x.id===id);if(!c)return;const g=G.find(x=>x.k===c.g);box.style.setProperty('--g',g?g.c:'#c9ced8');
- const im=document.getElementById('d-img');im.src=`img/${c.id}.webp`;im.alt=c.n;
+ const im=document.getElementById('d-img');im.src=`img/${c.id}.png`;im.alt=c.n;
  document.getElementById('d-n').textContent=c.n;
  document.getElementById('d-m').textContent=`${g?g.ko+' · ':'헌터협회 · '}${c.role}`;
  document.getElementById('d-d').textContent=c.d;
