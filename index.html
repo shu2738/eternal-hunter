@@ -143,7 +143,7 @@ footer{border-top:1px solid var(--line);text-align:center;color:var(--mute);font
 
 <section class="band" id="villain">
   <div class="sec"><h2>Villains<small>빌런</small></h2><p>협회 기록에서 얼굴만 남은 자들.</p></div>
-  <div class="vill"><b>Access Denied</b><span>빌런 5인의 기록은 곧 공개됩니다.</span></div>
+  <div class="row" id="g-vill" style="--g:#e0484f"></div>
 </section>
 
 <section class="band" id="rank">
@@ -183,6 +183,7 @@ const C=[
 {id:"a04",g:"as",n:"엘빈",s:"남",a:34,role:"협회 타격대장",rk:"S",mb:"ESTJ",ab:"거신",abd:"맨주먹으로 게이트 보스를 쓰러뜨리는 괴력",tags:["호탕한","든든한"],d:"협회 최강의 무력. 웃으며 팔짱 낀 채 서 있기만 해도 현장이 정리된다."},
 {id:"a06",g:"as",n:"류가온",s:"여",a:29,role:"정보분석관",rk:"B",mb:"INTP",ab:"투시",abd:"게이트 내부 구조와 마력 흐름을 읽어냄",tags:["온화한","치밀한"],d:"태블릿 하나로 작전 전체를 짜는 협회의 두뇌. 웃는 얼굴로 가장 냉정한 판단을 내린다."},
 {id:"a07",g:"as",n:"진서린",s:"여",a:31,role:"협회 감찰관",rk:"A",mb:"INFJ",ab:"정적",abd:"주변의 시간을 잠시 멈춰 세움",tags:["고요한","단아한"],d:"말수가 적고 언제나 차분한 감찰관. 그녀가 웃으면 조사는 이미 끝난 것이다."},
+{id:"v01",g:"vil",n:"차서진",s:"남",a:31,role:"수배 빌런 · 차서준의 형",rk:"S",mb:"INTJ",ab:"복제",abd:"눈으로 본 상대의 능력을 그대로 복사해 사용함",tags:["무표정","냉혹한"],d:"한때 촉망받던 헌터. 어느 날 동료들의 능력을 베껴 들고 사라졌다. 동생 차서준만이 그를 쫓고 있다."},
 {id:"h20",g:"obs",n:"차서준",s:"남",a:27,role:"흑요 길드원",rk:"S",mb:"ISTP",ab:"그림자",abd:"그림자 속을 이동하고 베어냄",tags:["무뚝뚝","실력파"],d:"높은 깃에 얼굴을 묻은 채 혼자 게이트에 들어갔다 혼자 나온다."},
 {id:"h06",g:"obs",n:"최서아",s:"여",a:26,role:"흑요 길드원",rk:"B",mb:"ESTP",ab:"폭권",abd:"주먹에 충격을 실어 터뜨림",tags:["열혈","직진"],d:"작전 설명이 끝나기 전에 이미 뛰어나가 있다."},
 {id:"h10",g:"obs",n:"민지유",s:"여",a:25,role:"흑요 길드원",rk:"A",mb:"ISTP",ab:"독",abd:"닿는 곳마다 독을 남김",tags:["무심한","독고다이"],d:"비 오는 밤이면 어김없이 나타난다. 말 거는 사람이 드물다."},
@@ -202,6 +203,7 @@ const C=[
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const card=(c,lead)=>`<button type="button" class="card${lead?' lead':''}" data-id="${c.id}"><div class="ph"><img loading="lazy" src="img/${c.id}.png?v=2" alt="${esc(c.n)}"></div><div class="bd">${lead?'<div class="tagline">GUILD MASTER</div>':''}<div class="nm">${esc(c.n)}</div><div class="rk">${esc(c.rk)}</div><div class="sub">${esc(c.role)} · ${esc(c.s)} ${c.a}세</div><div class="sub">${esc(c.mb)}</div><div class="ab"><b>${esc(c.ab)}</b> — ${esc(c.abd)}</div></div></button>`;
 document.getElementById('g-assoc').innerHTML=C.filter(c=>c.g==='as').map(c=>card(c)).join('');
+document.getElementById('g-vill').innerHTML=C.filter(c=>c.g==='vil').map(c=>card(c)).join('');
 const tabs=document.getElementById('tabs'),panel=document.getElementById('panel');
 tabs.innerHTML=G.map((g,i)=>`<button type="button" role="tab" id="t-${g.k}" aria-selected="${i===0}" data-k="${g.k}" style="--c:${g.c}"><i class="sw"></i><span><b>${esc(g.ko)}</b><span>${esc(g.en)}</span></span></button>`).join('');
 const show=k=>{const g=G.find(x=>x.k===k);const m=C.filter(c=>c.g===k);const L=m.find(c=>c.lead),R=m.filter(c=>!c.lead);
@@ -213,10 +215,10 @@ tabs.addEventListener('click',e=>{const b=e.target.closest('button');if(b)show(b
 const A=["<b>경보</b> 강남역 B급 게이트 개방 — 흑요 길드 출동","<b>공지</b> 상반기 헌터 등급 재심사 접수 중","<b>경보</b> 한강 하류 A급 게이트 관측 — 심해 길드 대기","<b>속보</b> 설화 길드 S급 게이트 무피해 공략","<b>안내</b> 게이트 반경 2km 출입 통제 구역 확대"];
 const run=document.getElementById('run');run.innerHTML=[...A,...A].map(t=>`<span>${t}</span>`).join('');
 const dlg=document.getElementById('dlg'),box=document.getElementById('d-box');let last=null;
-const open=id=>{const c=C.find(x=>x.id===id);if(!c)return;const g=G.find(x=>x.k===c.g);box.style.setProperty('--g',g?g.c:'#c9ced8');
+const open=id=>{const c=C.find(x=>x.id===id);if(!c)return;const g=G.find(x=>x.k===c.g);box.style.setProperty('--g',g?g.c:(c.g==='vil'?'#e0484f':'#c9ced8'));
  const im=document.getElementById('d-img');im.src=`img/${c.id}.png?v=2`;im.alt=c.n;
  document.getElementById('d-n').textContent=c.n;
- document.getElementById('d-m').textContent=`${g?g.ko+' · ':'헌터협회 · '}${c.role}`;
+ document.getElementById('d-m').textContent=`${g?g.ko+' · ':(c.g==='vil'?'빌런 · ':'헌터협회 · ')}${c.role}`;
  document.getElementById('d-d').textContent=c.d;
  document.getElementById('d-dl').innerHTML=`<dt>등급</dt><dd>${esc(c.rk)}</dd><dt>성별/나이</dt><dd>${esc(c.s)} / ${c.a}세</dd><dt>MBTI</dt><dd>${esc(c.mb)}</dd><dt>이능</dt><dd>${esc(c.ab)} — ${esc(c.abd)}</dd><dt>성격</dt><dd>${c.tags.map(t=>'#'+esc(t)).join(' ')}</dd>`;
  dlg.classList.add('on');document.getElementById('d-x').focus();};
