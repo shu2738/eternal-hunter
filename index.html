@@ -193,12 +193,12 @@ const C=[
 {id:"h08",g:"snow",n:"임소윤",s:"여",a:20,role:"설화 길드원",rk:"B",mb:"ENFP",ab:"환영",abd:"실제와 똑같은 환영을 만들어 냄",tags:["장난스러운","눈치 빠른"],d:"최연소 등록자 중 하나. 장난과 위장의 경계가 애매하다."},
 {id:"h07",g:"aby",lead:1,n:"권시우",s:"남",a:29,role:"심해 길드장",rk:"S",mb:"INTP",ab:"연산",abd:"전장의 흐름을 몇 수 앞까지 계산",tags:["분석적","침착한"],d:"안경을 고쳐 쓰는 순간 작전이 바뀐다."},
 {id:"h09",g:"aby",n:"정다은",s:"여",a:23,role:"심해 길드원",rk:"B",mb:"ISFJ",ab:"탐지",abd:"근처의 마력 흐름을 읽어 냄",tags:["순한","꼼꼼한"],d:"아침 커피를 들고 게이트 앞에 가장 먼저 도착한다."},
-{id:"h12",g:"aby",n:"오수아",s:"여",a:27,role:"심해 길드원",rk:"A",mb:"ESTJ",ab:"방벽",abd:"동료 앞에 단단한 벽을 세움",tags:["믿음직한","책임감"],d:"공략대의 맏언니. 그녀가 선 곳까지가 안전선이다."},
-{id:"h18",g:"aby",n:"도재현",s:"남",a:27,role:"심해 길드원",rk:"A",mb:"ESTP",ab:"강철",abd:"몸을 강철처럼 단단하게 바꿈",tags:["능글맞은","돌격형"],d:"흉터를 훈장처럼 달고 다니는 돌격대장. 웃으면서 맨 앞에 선다."},
+{id:"h12",g:"aby",n:"오수아",s:"여",a:27,role:"심해 길드원",rk:"A",mb:"ESTJ",ab:"고양",abd:"동료 전원의 힘과 마력을 끌어올리고 보호막을 두름",tags:["믿음직한","책임감"],d:"공략대의 맏언니. 그녀가 선 곳까지가 안전선이다."},
+{id:"h18",g:"aby",n:"도재현",s:"남",a:27,role:"심해 길드원",rk:"A",mb:"ESTP",ab:"약탈",abd:"닿은 상대의 능력치를 빼앗아 자신의 것으로 만듦",tags:["능글맞은","돌격형"],d:"흉터를 훈장처럼 달고 다니는 돌격대장. 웃으면서 맨 앞에 선다."},
 {id:"h13",g:"cri",lead:1,n:"문채윤",s:"여",a:30,role:"적월 길드장",rk:"S",mb:"ENFJ",ab:"혈월",abd:"붉은 달빛 아래에서 받은 피해를 그대로 되돌려줌",tags:["여유로운","누님"],d:"느긋하게 웃으며 상대를 내려놓게 만드는 누님. 적월의 모든 협상은 그녀를 거친다."},
 {id:"h04",g:"cri",n:"나예은",s:"여",a:21,role:"적월 길드원",rk:"B",mb:"ENTP",ab:"가속",abd:"몸의 속도를 몇 배로 끌어올림",tags:["건방진","자신만만"],d:"손가락질하며 도발하는 게 특기. 그리고 대체로 그 말을 지킨다."},
-{id:"h11",g:"cri",n:"박하준",s:"남",a:24,role:"적월 길드원",rk:"B",mb:"ESFP",ab:"폭발",abd:"손끝에서 폭발을 일으킴",tags:["분위기메이커","허당"],d:"사고를 치고 머쓱하게 웃는 게 일상. 결정적일 땐 믿을 만하다."},
-{id:"h16",g:"cri",n:"배나연",s:"여",a:22,role:"적월 길드원",rk:"A",mb:"ISFP",ab:"바람",abd:"바람을 일으켜 몸을 띄움",tags:["느긋한","자유로운"],d:"기지개부터 켜고 일을 시작한다. 이상하게 늘 제시간에 끝낸다."}];
+{id:"h11",g:"cri",n:"박하준",s:"남",a:24,role:"적월 길드원",rk:"B",mb:"ESFP",ab:"신체 강화",abd:"근력·속도·내구를 한계 이상으로 끌어올림",tags:["분위기메이커","허당"],d:"사고를 치고 머쓱하게 웃는 게 일상. 결정적일 땐 믿을 만하다."},
+{id:"h16",g:"cri",n:"배나연",s:"여",a:22,role:"적월 길드원",rk:"A",mb:"ISFP",ab:"무기고",abd:"허공에서 수십 자루의 무기를 소환해 쏟아냄",tags:["느긋한","자유로운"],d:"기지개부터 켜고 일을 시작한다. 이상하게 늘 제시간에 끝낸다."}];
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const card=(c,lead)=>`<button type="button" class="card${lead?' lead':''}" data-id="${c.id}"><div class="ph"><img loading="lazy" src="img/${c.id}.png?v=2" alt="${esc(c.n)}"></div><div class="bd">${lead?'<div class="tagline">GUILD MASTER</div>':''}<div class="nm">${esc(c.n)}</div><div class="rk">${esc(c.rk)}</div><div class="sub">${esc(c.role)} · ${esc(c.s)} ${c.a}세</div><div class="sub">${esc(c.mb)}</div><div class="ab"><b>${esc(c.ab)}</b> — ${esc(c.abd)}</div></div></button>`;
 document.getElementById('g-assoc').innerHTML=C.filter(c=>c.g==='as').map(c=>card(c)).join('');
