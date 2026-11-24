@@ -49,6 +49,7 @@ header nav a:hover{color:#fff;background:var(--p2)}
 .sec{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:16px;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:28px}
 .sec h2{margin:0;font:700 clamp(34px,5vw,50px)/1.05 Oswald;text-transform:uppercase}
 .sec h2 small{display:block;font:500 16px "Noto Sans KR";color:var(--mute);text-transform:none;margin-top:6px}
+.vnote{border-left:3px solid #e0484f;background:var(--p1);padding:16px 18px;margin:-8px 0 24px;border-radius:0 4px 4px 0}.vnote b{display:block;font-size:18px;margin-bottom:6px;color:#e0484f}.vnote span{color:var(--mute);font-size:15px;line-height:1.7}
 .sec p{margin:0;color:var(--mute);max-width:38ch;text-align:right;font-size:15px}
 
 .row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
@@ -142,7 +143,8 @@ footer{border-top:1px solid var(--line);text-align:center;color:var(--mute);font
 </section>
 
 <section class="band" id="villain">
-  <div class="sec"><h2>Villains<small>빌런</small></h2><p>협회 기록에서 얼굴만 남은 자들.</p></div>
+  <div class="sec"><h2>Villains<small>빌런</small></h2><p>협회가 버린 자, 협회를 버린 자.</p></div>
+  <div class="vnote"><b>“게이트의 주인은 협회가 아니다.”</b><span>협회의 등급표에 등을 돌린 헌터들. 공략대가 보스를 쓰러뜨린 직후의 게이트에 숨어들어 마석과 전리품을 쓸어 가고, 남은 것은 붕괴하는 게이트뿐이다. 협회는 그들을 ‘수확자’라 부른다.</span></div>
   <div class="row" id="g-vill" style="--g:#e0484f"></div>
 </section>
 
@@ -183,7 +185,7 @@ const C=[
 {id:"a04",g:"as",n:"엘빈",s:"남",a:34,role:"협회 타격대장",rk:"S",mb:"ESTJ",ab:"거신",abd:"맨주먹으로 게이트 보스를 쓰러뜨리는 괴력",tags:["호탕한","든든한"],d:"협회 최강의 무력. 웃으며 팔짱 낀 채 서 있기만 해도 현장이 정리된다."},
 {id:"a06",g:"as",n:"류가온",s:"여",a:29,role:"정보분석관",rk:"B",mb:"INTP",ab:"투시",abd:"게이트 내부 구조와 마력 흐름을 읽어냄",tags:["온화한","치밀한"],d:"태블릿 하나로 작전 전체를 짜는 협회의 두뇌. 웃는 얼굴로 가장 냉정한 판단을 내린다."},
 {id:"a07",g:"as",n:"진서린",s:"여",a:31,role:"협회 감찰관",rk:"A",mb:"INFJ",ab:"정적",abd:"주변의 시간을 잠시 멈춰 세움",tags:["고요한","단아한"],d:"말수가 적고 언제나 차분한 감찰관. 그녀가 웃으면 조사는 이미 끝난 것이다."},
-{id:"v01",g:"vil",n:"차서진",s:"남",a:31,role:"수배 빌런 · 차서준의 형",rk:"S",mb:"INTJ",ab:"복제",abd:"눈으로 본 상대의 능력을 그대로 복사해 사용함",tags:["무표정","냉혹한"],d:"한때 촉망받던 헌터. 어느 날 동료들의 능력을 베껴 들고 사라졌다. 동생 차서준만이 그를 쫓고 있다."},
+{id:"v01",g:"vil",n:"차서진",s:"남",a:31,role:"수배 빌런 · 차서준의 형",rk:"S",mb:"INTJ",ab:"복제",abd:"눈으로 본 상대의 능력을 그대로 복사해 사용함",tags:["무표정","냉혹한"],d:"한때 협회가 가장 아끼던 헌터. 협회의 은폐를 알게 된 날 동료들의 능력을 베껴 들고 사라졌다. 지금은 수확자를 이끌며, 동생 차서준만이 그를 쫓고 있다."},
 {id:"h20",g:"obs",n:"차서준",s:"남",a:27,role:"흑요 길드원",rk:"S",mb:"ISTP",ab:"그림자",abd:"그림자 속을 이동하고 베어냄",tags:["무뚝뚝","실력파"],d:"높은 깃에 얼굴을 묻은 채 혼자 게이트에 들어갔다 혼자 나온다."},
 {id:"h06",g:"obs",n:"최서아",s:"여",a:26,role:"흑요 길드원",rk:"B",mb:"ESTP",ab:"폭권",abd:"주먹에 충격을 실어 터뜨림",tags:["열혈","직진"],d:"작전 설명이 끝나기 전에 이미 뛰어나가 있다."},
 {id:"h10",g:"obs",n:"민지유",s:"여",a:25,role:"흑요 길드원",rk:"A",mb:"ISTP",ab:"독",abd:"닿는 곳마다 독을 남김",tags:["무심한","독고다이"],d:"비 오는 밤이면 어김없이 나타난다. 말 거는 사람이 드물다."},
