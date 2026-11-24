@@ -50,6 +50,22 @@ header nav a:hover{color:#fff;background:var(--p2)}
 .sec h2{margin:0;font:700 clamp(34px,5vw,50px)/1.05 Oswald;text-transform:uppercase}
 .sec h2 small{display:block;font:500 16px "Noto Sans KR";color:var(--mute);text-transform:none;margin-top:6px}
 .vnote{border-left:3px solid #e0484f;background:var(--p1);padding:16px 18px;margin:-8px 0 24px;border-radius:0 4px 4px 0}.vnote b{display:block;font-size:18px;margin-bottom:6px;color:#e0484f}.vnote span{color:var(--mute);font-size:15px;line-height:1.7}
+.lore{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:36px}
+.lore div{background:var(--p1);border:1px solid var(--line);border-radius:4px;padding:20px 20px 18px;border-top:3px solid var(--alert)}
+.lore b{display:block;font:700 13px Oswald;letter-spacing:.12em;color:var(--alert);margin-bottom:4px}
+.lore h3{margin:0 0 8px;font-size:19px}
+.lore p{margin:0;color:#b8bdc8;font-size:15px;line-height:1.75}
+.wintro{font-size:17px;line-height:1.85;color:#d4d7de;max-width:62ch;margin:0 0 32px}
+.tl{list-style:none;margin:0 0 32px;padding:0;border-left:2px solid var(--line)}
+.tl li{position:relative;padding:0 0 22px 22px}
+.tl li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--alert)}
+.tl span{display:block;font:700 14px Oswald;letter-spacing:.08em;color:var(--alert)}
+.tl strong{display:block;font-size:16px;margin:2px 0}
+.tl p{margin:0;color:var(--mute);font-size:14.5px;line-height:1.7}
+.classified{border:1px dashed #e0484f;background:#1a0d0f;padding:18px 20px;border-radius:4px}
+.classified b{display:block;font:700 14px Oswald;letter-spacing:.14em;color:#e0484f;margin-bottom:6px}
+.classified p{margin:0;color:#c9b3b6;font-size:15px;line-height:1.75}
+@media(max-width:860px){.lore{grid-template-columns:1fr}}
 .sec p{margin:0;color:var(--mute);max-width:38ch;text-align:right;font-size:15px}
 
 .row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
@@ -116,7 +132,7 @@ footer{border-top:1px solid var(--line);text-align:center;color:var(--mute);font
 <body>
 <header><div class="in">
   <a class="wm" href="#top">ETERNAL <i>·</i> HUNTER</a>
-  <nav aria-label="메뉴"><a href="#assoc">협회</a><a href="#guilds">길드</a><a href="#villain">빌런</a><a href="#rank">등급</a></nav>
+  <nav aria-label="메뉴"><a href="#world">세계관</a><a href="#assoc">협회</a><a href="#guilds">길드</a><a href="#villain">빌런</a><a href="#rank">등급</a></nav>
 </div></header>
 
 <main id="top">
@@ -129,6 +145,27 @@ footer{border-top:1px solid var(--line);text-align:center;color:var(--mute);font
 </section>
 
 <div class="alert" aria-label="게이트 경보"><div class="run" id="run"></div></div>
+
+<section class="band" id="world">
+  <div class="sec"><h2>The World<small>세계관</small></h2><p>문이 열린 밤, 세상은 두 겹이 되었다.</p></div>
+  <p class="wintro">십 년 전 겨울, 자정을 막 넘긴 시각. 서울 상공에 검은 금이 그어졌다. 하늘이 유리처럼 갈라지고, 그 틈으로 이 세계의 것이 아닌 공기가 흘러내렸다. 같은 밤 전 세계 서른두 개 도시에 같은 금이 생겼다. 사람들은 그날을 <b>개문(開門)의 밤</b>이라 부른다.</p>
+  <div class="lore">
+    <div><b>GATE</b><h3>게이트 — 세계의 상처</h3><p>우리 세계 아래에는 또 하나의 층, <b>심층(深層)</b>이 맞닿아 있다. 두 층이 스치는 자리에 생기는 틈이 게이트다. 안쪽은 심층의 법칙이 지배하는 던전이며, 가장 깊은 곳의 보스를 쓰러뜨려야 문이 닫힌다.</p></div>
+    <div><b>AWAKENING</b><h3>각성 — 선택받은 0.3%</h3><p>개문의 밤, 심층의 공기를 들이마신 사람 중 극소수가 이능에 눈을 떴다. 왜 그들이었는지는 아무도 모른다. 각성자는 협회의 측정을 거쳐 등급을 받고 ‘헌터’가 된다.</p></div>
+    <div><b>BREAK</b><h3>브레이크 — 닫지 못한 문</h3><p>게이트는 열린 뒤 72시간 안에 닫아야 한다. 시간이 넘으면 문이 터지며 안의 것들이 도시로 쏟아진다. 이것을 브레이크라 부른다. 헌터가 목숨을 거는 이유는 결국 이 72시간이다.</p></div>
+    <div><b>MANA STONE</b><h3>마석 — 문 너머의 값</h3><p>심층의 괴물은 쓰러지면 빛나는 결정을 남긴다. 마석 한 조각이 도시 한 블록을 하루 동안 밝힌다. 게이트는 재앙이자 광산이 되었고, 그 이권을 둘러싸고 협회와 길드, 그리고 수확자가 움직인다.</p></div>
+  </div>
+  <ol class="tl">
+    <li><span>YEAR 0</span><strong>개문의 밤</strong><p>전 세계 32개 도시 동시 개문. 첫 각성자 등장.</p></li>
+    <li><span>YEAR 1</span><strong>헌터협회 창설</strong><p>정부 산하 특수기관으로 출범. 등급 심사와 게이트 배정을 독점한다.</p></li>
+    <li><span>YEAR 3</span><strong>을지 대붕괴</strong><p>국내 첫 브레이크. 도심 한 구역이 지도에서 지워졌고, 이후 72시간 규칙이 법이 된다.</p></li>
+    <li><span>YEAR 6</span><strong>4대 길드 체계</strong><p>흑요·설화·심해·적월이 협회 공인 길드로 지정되며 민간 공략 시대가 열린다.</p></li>
+    <li><span>YEAR 8</span><strong>첫 L급 등록</strong><p>백연우, 단신으로 S급 게이트 셋을 하룻밤에 닫으며 유일한 L급으로 등록.</p></li>
+    <li><span>YEAR 9</span><strong>차서진 실종</strong><p>협회 최정예 헌터가 동료들의 능력을 복제한 채 사라진다. 같은 해부터 ‘수확자’의 흔적이 보고되기 시작.</p></li>
+    <li><span>NOW</span><strong>개문 10주년</strong><p>게이트 발생 빈도가 매년 늘고 있다. 협회는 공식 발표를 미루는 중이다.</p></li>
+  </ol>
+  <div class="classified"><b>CLASSIFIED · 열람 제한</b><p>개문의 밤은 자연 현상이 아니었다는 기록이 있다. 협회 창설 이전, 심층에 닿으려 했던 비공개 연구 ‘<b>이터널 프로젝트</b>’. 첫 번째 금은 그 실험실 바로 위에서 그어졌다. 이 문서를 본 마지막 헌터는 차서진이다.</p></div>
+</section>
 
 <section class="band" id="assoc">
   <div class="sec"><h2>Hunter Association<small>헌터협회</small></h2><p>게이트 승인, 등급 심사, 사고 수습. 모든 공략은 협회 서류 한 장에서 시작된다.</p></div>
