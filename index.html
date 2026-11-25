@@ -264,7 +264,7 @@ const open=id=>{const c=C.find(x=>x.id===id);if(!c)return;const g=G.find(x=>x.k=
  const im=document.getElementById('d-img');im.src=`img/${c.id}.png?v=2`;im.alt=c.n;
  const EM=[['k','기본'],['s','미소'],['t','슬픔'],['h','화남'],['b','부끄'],['d','경멸'],['q','의문'],['f','전투']].filter(e=>!(e[0]==='b'&&c.s==='남'));
  const eb=document.getElementById('d-emo');eb.innerHTML=EM.map((e,i)=>`<button type="button" role="tab" aria-selected="${i?'false':'true'}" data-e="${e[0]}">${e[1]}</button>`).join('');
- eb.onclick=ev=>{const b=ev.target.closest('button');if(!b)return;eb.querySelectorAll('button').forEach(x=>x.setAttribute('aria-selected',x===b?'true':'false'));const k=b.dataset.e;im.src=k==='k'?`img/${c.id}.png?v=2`:`img/e_${c.id}_${k}.png`;};
+ eb.onclick=ev=>{const b=ev.target.closest('button');if(!b)return;eb.querySelectorAll('button').forEach(x=>x.setAttribute('aria-selected',x===b?'true':'false'));const k=b.dataset.e;im.src=k==='k'?`img/${c.id}.png?v=2`:`img/e_${c.id}_${k}.png?v=3`;};
  document.getElementById('d-n').textContent=c.n;
  document.getElementById('d-m').textContent=`${g?g.ko+' · ':(c.g==='vil'?'빌런 · ':'헌터협회 · ')}${c.role}`;
  document.getElementById('d-d').textContent=c.d;
