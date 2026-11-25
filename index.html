@@ -104,7 +104,7 @@ header nav a:hover{color:#fff;background:var(--p2)}
 .ranks div{padding:18px 16px;border-right:1px solid var(--line);background:var(--p1)}
 .ranks div:last-child{border-right:0}
 .ranks b{display:block;font:700 30px Oswald}
-.ranks div:first-child b{color:var(--alert)}
+.ranks div:last-child b{color:var(--alert)}
 .ranks span{color:var(--mute);font-size:14px}
 .vill{border:1px solid #3b1216;background:repeating-linear-gradient(135deg,#0f0809 0 14px,#120a0b 14px 28px);border-radius:4px;padding:44px 24px;text-align:center}
 .vill b{display:block;font:700 24px Oswald;color:var(--alert);letter-spacing:.1em}
@@ -159,7 +159,7 @@ footer{border-top:1px solid var(--line);text-align:center;color:var(--mute);font
 <body>
 <header><div class="in">
   <a class="wm" href="#top">ETERNAL <i>·</i> HUNTER</a>
-  <nav aria-label="메뉴"><a href="#world">세계관</a><a href="#assoc">협회</a><a href="#guilds">길드</a><a href="#villain">빌런</a><a href="#indie">무소속</a><a href="#monster">마물</a><a href="#rank">등급</a></nav>
+  <nav aria-label="메뉴"><a href="#world">세계관</a><a href="#assoc">협회</a><a href="#guilds">길드</a><a href="#villain">빌런</a><a href="#indie">무소속</a><a href="#rank">등급</a><a href="#monster">마물</a></nav>
 </div></header>
 
 <main id="top">
@@ -218,23 +218,24 @@ footer{border-top:1px solid var(--line);text-align:center;color:var(--mute);font
   <div class="row" id="g-ind" style="--g:#c8a86a"></div>
 </section>
 
+<section class="band" id="rank">
+  <div class="sec"><h2>Rank<small>헌터 등급</small></h2><p>협회 심사로 매겨지며 1년마다 다시 측정한다.</p></div>
+  <div class="ranks">
+    <div><b>D</b><span>지원·후방</span></div>
+    <div><b>C</b><span>공략대 보조</span></div>
+    <div><b>B</b><span>공략대 주력</span></div>
+    <div><b>A</b><span>길드 주전력</span></div>
+    <div><b>S</b><span>단독 대형 게이트 공략</span></div>
+    <div><b>L</b><span>국가 재난급. 등록자 1인</span></div>
+  </div>
+</section>
+
 <section class="band" id="monster">
   <div class="sec"><h2>Monsters<small>게이트 마물</small></h2><p>문 너머에서 기어 나오는 것들. 빛의 색이 곧 위험도다.</p></div>
   <div class="mobrk"><div style="--mc:#4ade80"><b>D</b><span>게이트 밖으로 새어 나오는 잔챙이. 신입 혼자서도 상대할 수 있지만, 떼로 몰리면 위험하다.</span></div><div style="--mc:#3b82f6"><b>C</b><span>공략대 보조로 충분히 막을 수 있다. 둘셋이 짝을 지으면 제압된다.</span></div><div style="--mc:#a855f7"><b>B</b><span>공략대가 작전을 짜야 하는 상대. 마법이나 특수한 습성을 가졌다.</span></div><div style="--mc:#ef4444"><b>A</b><span>길드 주전력이 나서야 하는 마족. 지능과 무기를 갖춘 전사들이다.</span></div><div style="--mc:#f5c542"><b>S</b><span>대형 게이트의 주인. 브레이크 때 나오면 도시 한 구역이 사라진다. 길드장급이 투입된다.</span></div><div style="--mc:#f2f2f2"><b>L</b><span>심층 그 자체. 기록상 단 한 체. 나타나는 순간 국가 재난이다.</span></div></div>
   <div class="mobg" style="--mc:#4ade80"><h3>D<small>4종</small></h3><div class="mobs"><div class="mob"><div class="ph"><img loading="lazy" src="img/m_d1.png?v=1" alt="그림자임프"></div><div class="bd"><div class="nm">그림자임프<i>D</i></div><p>골목 그림자에서 튀어나와 할퀴고 달아나는 작은 마귀.</p></div></div><div class="mob"><div class="ph"><img loading="lazy" src="img/m_d2.png?v=1" alt="군체벌레"></div><div class="bd"><div class="nm">군체벌레<i>D</i></div><p>수백 마리가 한 덩어리로 움직이는 벌레 떼. 흩어지면 약하다.</p></div></div><div class="mob"><div class="ph"><img loading="lazy" src="img/m_d3.png?v=1" alt="독안개마물"></div><div class="bd"><div class="nm">독안개마물<i>D</i></div><p>독안개로 된 몸. 들이마시면 마력이 흐트러진다.</p></div></div><div class="mob"><div class="ph"><img loading="lazy" src="img/m_d4.png?v=1" alt="심연박쥐"></div><div class="bd"><div class="nm">심연박쥐<i>D</i></div><p>떼 지어 날아드는 박쥐. 울음소리로 감각을 흐린다.</p></div></div></div></div><div class="mobg" style="--mc:#3b82f6"><h3>C<small>4종</small></h3><div class="mobs"><div class="mob"><div class="ph"><img loading="lazy" src="img/m_c1.png?v=1" alt="심연사냥개"></div><div class="bd"><div class="nm">심연사냥개<i>C</i></div><p>냄새로 각성자를 쫓는 사냥개. 셋 이상이면 포위한다.</p></div></div><div class="mob"><div class="ph"><img loading="lazy" src="img/m_c2.png?v=1" alt="거미마족"></div><div class="bd"><div class="nm">거미마족<i>C</i></div><p>게이트 벽에 거미줄 함정을 치고 기다린다.</p></div></div><div class="mob"><div class="ph"><img loading="lazy" src="img/m_c3.png?v=1" alt="사슬마귀"></div><div class="bd"><div class="nm">사슬마귀<i>C</i></div><p>사슬로 끌어당긴 뒤 갈고리 손으로 찢는다.</p></div></div><div class="mob"><div class="ph"><img loading="lazy" src="img/m_c4.png?v=1" alt="가면마족"></div><div class="bd"><div class="nm">가면마족<i>C</i></div><p>깨진 가면 뒤에서 환각을 건다. 가면이 깨지면 약해진다.</p></div></div></div></div><div class="mobg" style="--mc:#a855f7"><h3>B<small>4종</small></h3><div class="mobs"><div class="mob"><div class="ph"><img loading="lazy" src="img/m_b1.png?v=1" alt="망령마도사"></div><div class="bd"><div class="nm">망령마도사<i>B</i></div><p>저주와 마탄을 쏘는 해골 마도사. 후방부터 노린다.</p></div></div><div class="mob"><div class="ph"><img loading="lazy" src="img/m_b2.png?v=1" alt="촉수마수"></div><div class="bd"><div class="nm">촉수마수<i>B</i></div><p>물에 잠긴 게이트에 숨어 촉수로 끌어들인다.</p></div></div><div class="mob"><div class="ph"><img loading="lazy" src="img/m_b3.png?v=1" alt="날개마귀"></div><div class="bd"><div class="nm">날개마귀<i>B</i></div><p>하늘에서 급강하한다. 문 밖으로 나오면 가장 골치 아프다.</p></div></div><div class="mob"><div class="ph"><img loading="lazy" src="img/m_b4.png?v=1" alt="심연뱀"></div><div class="bd"><div class="nm">심연뱀<i>B</i></div><p>단단한 비늘의 거대한 뱀. 몸을 감아 조인다.</p></div></div></div></div><div class="mobg" style="--mc:#ef4444"><h3>A<small>4종</small></h3><div class="mobs"><div class="mob"><div class="ph"><img loading="lazy" src="img/m_a1.png?v=1" alt="뿔마족전사"></div><div class="bd"><div class="nm">뿔마족전사<i>A</i></div><p>갑옷과 한 몸이 된 대검 전사. 정면 승부를 즐긴다.</p></div></div><div class="mob"><div class="ph"><img loading="lazy" src="img/m_a2.png?v=1" alt="마족기사"></div><div class="bd"><div class="nm">마족기사<i>A</i></div><p>장검과 방패를 든 기사. 다른 마물을 지휘한다.</p></div></div><div class="mob"><div class="ph"><img loading="lazy" src="img/m_a3.png?v=1" alt="마검마족"></div><div class="bd"><div class="nm">마검마족<i>A</i></div><p>네 팔에 네 자루의 검. 근접전에서 가장 위험하다.</p></div></div><div class="mob"><div class="ph"><img loading="lazy" src="img/m_a4.png?v=1" alt="마수기병"></div><div class="bd"><div class="nm">마수기병<i>A</i></div><p>마수를 탄 창기병. 돌진 한 번에 진형이 무너진다.</p></div></div></div></div><div class="mobg" style="--mc:#f5c542"><h3>S<small>4종</small></h3><div class="mobs"><div class="mob"><div class="ph"><img loading="lazy" src="img/m_s1.png?v=1" alt="거대마수"></div><div class="bd"><div class="nm">거대마수<i>S</i></div><p>건물만 한 마수. 발걸음마다 도로가 꺼진다.</p></div></div><div class="mob"><div class="ph"><img loading="lazy" src="img/m_s2.png?v=1" alt="거인마족"></div><div class="bd"><div class="nm">거인마족<i>S</i></div><p>빌딩 위로 고개를 내미는 거인. 뿔 왕관을 썼다.</p></div></div><div class="mob"><div class="ph"><img loading="lazy" src="img/m_s3.png?v=1" alt="균열포식자"></div><div class="bd"><div class="nm">균열포식자<i>S</i></div><p>공간의 금 자체가 아가리다. 사람도 마력도 삼킨다.</p></div></div><div class="mob"><div class="ph"><img loading="lazy" src="img/m_s4.png?v=1" alt="마령군주"></div><div class="bd"><div class="nm">마령군주<i>S</i></div><p>망령을 다스리는 군주. 쓰러진 헌터를 일으켜 세운다.</p></div></div></div></div><div class="mobg" style="--mc:#f2f2f2"><h3>L<small>1종</small></h3><div class="mobs one"><div class="mob"><div class="ph"><img loading="lazy" src="img/m_l1.png?v=1" alt="심층의 감시자"></div><div class="bd"><div class="nm">심층의 감시자<i>L</i></div><p>기록에는 단 한 줄뿐이다. "하늘의 금 너머에서, 눈이 열렸다."</p></div></div></div></div>
 </section>
 
-<section class="band" id="rank">
-  <div class="sec"><h2>Rank<small>헌터 등급</small></h2><p>협회 심사로 매겨지며 1년마다 다시 측정한다.</p></div>
-  <div class="ranks">
-    <div><b>L</b><span>국가 재난급. 등록자 1인</span></div>
-    <div><b>S</b><span>단독 대형 게이트 공략</span></div>
-    <div><b>A</b><span>길드 주전력</span></div>
-    <div><b>B</b><span>공략대 주력</span></div>
-    <div><b>C</b><span>공략대 보조</span></div>
-    <div><b>D</b><span>지원·후방</span></div>
-  </div>
-</section>
 </main>
 <footer>ETERNAL · HUNTER — 세계 기록</footer>
 
